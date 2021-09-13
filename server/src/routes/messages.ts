@@ -1,7 +1,9 @@
+import { Message } from '@models/message';
 import { Express } from 'express';
 
 export default function (app: Express): void {
     app.get('/messages', (req, res) => {
+        const ms: Message = new Message();
         res.json({ message: 'Messages API called.' });
     });
     

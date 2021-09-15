@@ -45,17 +45,25 @@
 
     /* Module Resolution Options */
     "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    "baseUrl": "./",                          /* Base directory to resolve non-absolute module names. */
-    "paths": {
-      "@models/*": [ "../models/*" ]
-    },                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    // "baseUrl": ".",                          /* Base directory to resolve non-absolute module names. */
+    // "paths": {
+    //   "@models/*": [
+    //     "../models/user/*.model.ts",
+    //     "../models/message/*.model.ts",
+    //   ],
+    //   "@interfaces/*": [
+    //     "../models/user/*.interface.ts",
+    //     "../models/message/*.interface.ts",
+    //   ]
+    // },                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [
     //   "./src",
     //   "../models"
     // ],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
-    "typeRoots": [
-      "./node_modules/@types"
-    ],                       /* List of folders to include type definitions from. */
+    // "typeRoots": [
+    //   "./node_modules/@types",
+    //   "../models/**"
+    // ],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
     // "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
     "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
@@ -74,7 +82,9 @@
 
     /* Advanced Options */
     "skipLibCheck": false,                    /* Skip type checking of declaration files. */
-    "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
+    "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
+    "strictNullChecks": false,
+    "traceResolution": true,
   },
   "references": [
     {
@@ -84,6 +94,7 @@
   "exclude": [
     "node_modules",
     "dist",
+    ".dist",
     "build"
   ]
 }

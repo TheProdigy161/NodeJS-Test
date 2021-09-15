@@ -1,9 +1,10 @@
-import { Message } from '@models/message';
 import { Express } from 'express';
+import { IMessage } from '../../../models/message/message.interface';
+import { Message } from '../../../models/message/message.model';
 
 export default function (app: Express): void {
     app.get('/messages', (req, res) => {
-        const ms: Message = new Message();
+        const ms: IMessage = new Message();
         res.json({ message: 'Messages API called.' });
     });
     

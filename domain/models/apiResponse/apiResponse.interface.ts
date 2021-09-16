@@ -1,6 +1,9 @@
+import { StatusCode } from "../../enums/statusCode";
+
 export interface IApiResponse<T> {
     message: string;
-    successCode: StatusCodes
-    success: boolean;
-    body: T;
+    statusCode: StatusCode
+    body: T | T[];
+
+    isSuccessfulStatusCode(): boolean;
 }

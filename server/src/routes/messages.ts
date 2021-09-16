@@ -1,11 +1,32 @@
 import { Express } from 'express';
-import { IMessage } from '../../../models/message/message.interface';
-import { Message } from '../../../models/message/message.model';
+import { Message } from '@models/message/message.model';
+import { IMessage } from '@models/message/message.interface';
+import { ApiResponse } from '@models/apiResponse/apiResponse.model';
 
 export default function (app: Express): void {
     app.get('/messages', (req, res) => {
-        const ms: IMessage = new Message();
-        res.json({ message: 'Messages API called.' });
+        const messages: IMessage[] = [
+            new Message({
+                id: 1,
+                title: 'First message',
+                content: 'This is my first message.',
+                auditInfo: null
+            }),
+            new Message({
+                id: 2,
+                title: 'Second message',
+                content: 'This is my second message.',
+                auditInfo: null
+            }),
+            new Message({
+                id: 3,
+                title: 'Third message',
+                content: 'This is my third message.',
+                auditInfo: null
+            }),
+        ];
+
+        res.json(new ApiResponse('Successfully got messages.', messages));
     });
     
     app.get('/messages/:id', (req, res) => {

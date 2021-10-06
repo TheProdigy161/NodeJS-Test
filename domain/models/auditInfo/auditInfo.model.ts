@@ -1,5 +1,5 @@
 import { IAuditInfo } from './auditInfo.interface';
-export class AuditInfo implements IAuditInfo{
+export class AuditInfo implements IAuditInfo {
     private _creationDate: Date = null;
     private _createdBy: string = null;
     private _updateDate: Date = null;

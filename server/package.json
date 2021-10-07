@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc -b",
-    "start": "concurrently \"npm run build\" \"nodemon dist/index.js\"",
+    "start": "npm run build && nodemon dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,11 +13,17 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "module-alias": "^2.2.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "concurrently": "^6.2.1"
-  }
+    "@types/express": "^4.17.13"
+  },
+  "_moduleAliases": {
+    "@routes": "../server/dist/routes",
+    "@models": "../domain/dist/models",
+    "@enums": "../domain/dist/enums"
+  },
+  "type": "module"
 }

@@ -1,7 +1,8 @@
+require('module-alias/register');
+var dotenv = require('dotenv');
+import routes from '@routes/_routes';
 import express from 'express';
 import cors from 'cors';
-import routes from './routes/_routes';
-import dotenv from 'dotenv';
 
 dotenv.config();
 

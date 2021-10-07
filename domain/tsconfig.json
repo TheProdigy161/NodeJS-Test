@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "./.dist",               
+    // "declaration": true,
+    // "declarationMap": true,
+    "outDir": "./dist",               
     "rootDir": ".",
     "composite": true,
     "strict": true,

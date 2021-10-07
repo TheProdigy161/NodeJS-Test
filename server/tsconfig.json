@@ -3,15 +3,15 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "target": "ES5",
+    "target": "ES6",
     "paths": {
+      "@routes/*": [ "./src/routes/*" ],
       "@models/*": [ "../domain/models/*" ],
       "@enums/*": [ "../domain/enums/*" ]
     }
   },
   "include": [
-    "src/**/*.ts",
-    "../domain/**/*.ts"
+    "src"
   ],
   "exclude": [
     "node_modules",

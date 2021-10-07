@@ -1,7 +1,7 @@
 import { Express } from 'express';
-import api from './api';
-import messages from './messages';
-import users from './users';
+import api from '@routes/api';
+import messages from '@routes/messages';
+import users from '@routes/users';
 
 export default function(app: Express): void {
     api(app);

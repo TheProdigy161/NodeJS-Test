@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "target": "ES6",
     "paths": {
-      "@routes/*": [ "./src/routes/*" ],
+      "@routes/*": [ "../server/src/routes/*" ],
       "@models/*": [ "../domain/models/*" ],
       "@enums/*": [ "../domain/enums/*" ]
     }

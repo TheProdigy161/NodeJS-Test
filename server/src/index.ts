@@ -1,4 +1,3 @@
-require('module-alias/register');
 var dotenv = require('dotenv');
 import routes from '@routes/_routes';
 import express from 'express';

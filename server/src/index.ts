@@ -1,9 +1,8 @@
-var dotenv = require('dotenv');
-import routes from '@routes/_routes';
-import express from 'express';
-import cors from 'cors';
+import 'dotenv/config';
 
-dotenv.config();
+import cors from 'cors';
+import express from 'express';
+import routes from '@routes/_routes';
 
 const PORT = process.env.PORT || 5000;
 const app = express();

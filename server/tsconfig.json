@@ -1,11 +1,20 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "target": "es2019",
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],
     "outDir": "dist",
-    "baseUrl": ".",
-    "target": "ES6",
+    "baseUrl": "./",
+    "incremental": true,
     "paths": {
-      "@routes/*": [ "../server/src/routes/*" ],
+      "@routes/*": [ "src/routes/*" ],
       "@models/*": [ "../domain/models/*" ],
       "@enums/*": [ "../domain/enums/*" ]
     }

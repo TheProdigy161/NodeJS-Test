@@ -1,12 +1,13 @@
 {
-    "restartable": "rs",
-    "ignore": [".git", "node_modules/", "dist/", "coverage/"],
-    "watch": ["src"],
-    "execMap": {
-        "ts": "ts-node"
-    },
-    "env": {
-        "NODE_ENV": "development"
-    },
-    "ext": "js,json,ts"
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    ".git",
+    "node_modules"
+  ],
+  "watch": [
+    "src"
+  ],
+  "exec": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js",
+  "ext": "ts, js"
 }

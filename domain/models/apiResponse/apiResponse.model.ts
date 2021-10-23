@@ -5,7 +5,7 @@ export class ApiResponse<T> implements IApiResponse<T> {
     message: string;
     statusCode: StatusCode;
     success: boolean;
-    body: T | T[];
+    body: T;
 
     constructor(message: string, body?: T, statusCode?: StatusCode) {
         this.body = body ?? null;
@@ -17,7 +17,7 @@ export class ApiResponse<T> implements IApiResponse<T> {
         if (!this.body)
             return StatusCode.NO_CONTENT;
 
-        if ((this.body as T[]).length === 0)
+        if ((this.body as unknown as [])?.length === 0)
             return StatusCode.NO_CONTENT;
 
         return StatusCode.OK;

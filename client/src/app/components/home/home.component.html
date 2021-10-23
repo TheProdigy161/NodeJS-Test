@@ -1,3 +1,5 @@
 <p>home works!</p>
 
-<div>{{ (call$ | async)?.message }}</div>
+<mat-card *ngFor="let message of (call$ | async)" >
+  {{message.title}}
+</mat-card>

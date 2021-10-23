@@ -1,6 +1,8 @@
+import { Message } from '@models/message/message.model';
 import { Observable } from 'rxjs';
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  call$: Observable<any> = new Observable();
+  call$: Observable<Message[]> = new Observable();
 
-  constructor(public api: ApiService) { }
+  constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.call$ = this.api.get("http://localhost:5000");
+    this.call$ = this.messageService.getMessages();
   }
 }

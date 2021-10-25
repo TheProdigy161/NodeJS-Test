@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 class="pageTitle">Responsive App</h1>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav class="sidenav" #sidenav mode="side">
+    <div class="routingDiv">
+      <app-page-link pageRoute="dashboard" pageName="Dashboard"></app-page-link>
+      <app-page-link pageRoute="messages" pageName="Messages"></app-page-link>
+    </div>
+    <div class="versionDiv">Version</div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,5 +1,5 @@
 import { Message } from '@models/message/message.model';
-import { ApiService } from './api.service';
+import { HttpService } from './http.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -9,11 +9,11 @@ import { Observable } from 'rxjs';
 export class MessageService {
   protected controller: string = 'messages';
 
-  constructor(private api: ApiService) {
-    this.api.setController(this.controller);
+  constructor(private http: HttpService) {
+    this.http.setController(this.controller);
   }
 
   getMessages(): Observable<Message[]> {
-    return this.api.get();
+    return this.http.get();
   }
 }

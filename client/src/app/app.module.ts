@@ -31,12 +31,12 @@ export function initializeApp(appConfig: SettingsProvider) {
     DashboardSummaryComponent
   ],
   imports: [
+    MaterialUiModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialUiModule,
     DragDropModule,
   ],
   providers: [

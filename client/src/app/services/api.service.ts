@@ -1,25 +1,24 @@
-import { HttpClient } from '@angular/common/http';
+import { Message } from '@models/message/message.model';
+import { VersionData } from '@models/versionData/versionData.model';
+import { HttpService } from './http.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SettingsProvider } from './settingsProvider';
-import { ApiResponse } from '@models/apiResponse/apiResponse.model'
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  protected apiUrl: string = SettingsProvider.appConfig.apiUrl;
-  protected controller: string = null;
+  protected controller: string = 'api';
 
-  constructor(private http: HttpClient) { }
-
-  public setController(controller: string): void {
-    this.controller = controller;
+  constructor(private http: HttpService) {
+    this.http.setController(this.controller);
   }
 
-  public get<T>(action?: string): Observable<T> {
-    return this.http.get<ApiResponse<T>>(`${this.apiUrl}/${this.controller}/${action ?? ''}`)
-      .pipe(map(x => x.body));
+  getApi(): Observable<Message[]> {
+    return this.http.get();
+  }
+
+  getVersion(): Observable<VersionData> {
+    return this.http.get('version', 'text');
   }
 }

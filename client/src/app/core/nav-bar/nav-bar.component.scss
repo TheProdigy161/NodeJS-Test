@@ -9,6 +9,7 @@
 .versionDiv {
   min-height: 2.5%;
   min-width: 100%;
+  text-align: center;
 }
 
 .pageTitle {
@@ -16,14 +17,17 @@
 }
 
 mat-sidenav-container {
-  max-height: 92.5%;
-  min-height: 92.5%;
+  min-height: 95%;
 }
 
 mat-toolbar {
-  max-height: 7.5%;
+  min-height: 5%;
 }
 
 mat-sidenav-content {
   padding: 2.5%;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: auto;
 }

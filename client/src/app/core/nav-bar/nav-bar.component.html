@@ -11,7 +11,7 @@
       <app-page-link pageRoute="dashboard" pageName="Dashboard"></app-page-link>
       <app-page-link pageRoute="messages" pageName="Messages"></app-page-link>
     </div>
-    <div class="versionDiv">Version</div>
+    <div class="versionDiv" *ngIf="version$ | async as versionData">Version - {{ versionData.versionNumber }}</div>
   </mat-sidenav>
 
   <mat-sidenav-content>

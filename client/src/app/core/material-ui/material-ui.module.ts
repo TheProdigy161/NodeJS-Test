@@ -5,6 +5,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatGridListModule } from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [],
@@ -14,7 +16,9 @@ import { NgModule } from '@angular/core';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    DragDropModule,
+    MatGridListModule
   ],
   exports: [
     MatCardModule,
@@ -22,7 +26,9 @@ import { NgModule } from '@angular/core';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    DragDropModule,
+    MatGridListModule
   ],
 })
 export class MaterialUiModule {}

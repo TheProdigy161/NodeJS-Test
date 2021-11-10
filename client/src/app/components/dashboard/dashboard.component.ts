@@ -1,4 +1,6 @@
+import { PageService } from './../../services/page.service';
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  testArray: string[] = [
+    'Test 1',
+    'Test 2',
+    'Test 3',
+  ]
+  constructor(private pageService: PageService) {
+    this.pageService.setPageTitle('Dashboard');
+  }
 
   ngOnInit(): void {
   }
 
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.testArray, event.previousIndex, event.currentIndex);
+  }
 }

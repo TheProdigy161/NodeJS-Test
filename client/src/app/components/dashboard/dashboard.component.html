@@ -1,5 +1,4 @@
-<div cdkDropList>
-  <app-dashboard-summary dashboardSummaryTitle="Test 1"></app-dashboard-summary>
-  <app-dashboard-summary dashboardSummaryTitle="Test 2"></app-dashboard-summary>
-  <app-dashboard-summary dashboardSummaryTitle="Test 3"></app-dashboard-summary>
+<div cdkDropList cdkDropListOrientation="vertical" (cdkDropListDropped)="drop($event)">
+  <app-dashboard-summary *ngFor="let test of testArray" [dashboardSummaryTitle]="test" [addFunction]="addNewSummary"></app-dashboard-summary>
 </div>
+

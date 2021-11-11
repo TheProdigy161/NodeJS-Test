@@ -1,0 +1,15 @@
+mat-card.blankSummary {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+mat-card.summary {
+  background-color: lightblue;
+}
+
+.cdk-drag-placeholder {
+  border: dotted;
+
+  mat-card {
+    opacity: 0;
+  }
+}

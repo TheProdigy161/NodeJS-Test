@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-summary',
@@ -7,11 +7,27 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DashboardSummaryComponent implements OnInit {
   @Input()
-  dashboardSummaryTitle: string;
+  addFunction: Function = null;
+  @Input()
+  allowEdit: boolean = false;
+  @Input()
+  dashboardSummaryTitle: string = null;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  add(): void {
+    this.addFunction();
+  }
+
+  showBlankCard(): boolean {
+    return this.dashboardSummaryTitle == null;
+  }
+
+  showAdd(): boolean {
+    return this.addFunction != null;
+  }
 }

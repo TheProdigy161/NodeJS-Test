@@ -1,4 +1,14 @@
-<mat-card cdkDrag>
-  <mat-card-title>{{dashboardSummaryTitle}}</mat-card-title>
-  <mat-card-content></mat-card-content>
-</mat-card>
+<div cdkDrag>
+  <mat-card class="blankSummary" *ngIf="showBlankCard(); else summaryCard">
+    <button mat-fab color="primary" (click)="add()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-card>
+</div>
+
+<ng-template #summaryCard>
+  <mat-card class="summary">
+    <mat-card-title>{{dashboardSummaryTitle}}</mat-card-title>
+    <mat-card-content></mat-card-content>
+  </mat-card>
+</ng-template>

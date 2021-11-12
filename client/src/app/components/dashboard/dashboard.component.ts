@@ -9,11 +9,11 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class DashboardComponent implements OnInit {
   testArray: string[][] = [
-    [ null, null, null, null, null, null, null ],
-    [ 'Test 1', null, 'Test 3', null, null, null, null ],
-    [ null, null, null, null, null, null, null ],
-    [ null, 'Test 2', 'Test 3', null, null, null, null ],
-    [ 'Test 1', 'Test 2', null, null, null, null, null ],
+    [ null, null, null ],
+    [ 'Test 1', null, 'Test 3' ],
+    [ null, null, null ],
+    [ null, 'Test 2', 'Test 3' ],
+    [ 'Test 1', 'Test 2', null ],
   ]
 
   constructor(private pageService: PageService) {
@@ -34,17 +34,10 @@ export class DashboardComponent implements OnInit {
       const toElement = toArray[event.currentIndex];
 
       fromArray[event.previousIndex] = toElement;
-      toArray[event.previousIndex] = fromElement;
+      toArray[event.currentIndex] = fromElement;
 
       event.previousContainer.data = fromArray;
       event.container.data = toArray;
-
-      // transferArrayItem(
-      //   event.container.data,
-      //   event.previousContainer.data,
-      //   event.previousIndex,
-      //   event.currentIndex
-      // );
     }
   }
 

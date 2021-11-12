@@ -1,6 +1,11 @@
 app-dashboard-summary {
-  // display: flex;
-  width: 100%;
+  display: flex;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.dropList {
+  display: flex;
   height: 100%;
 }
 

@@ -1,5 +1,17 @@
+mat-card {
+  min-width: 200px;
+  min-height: 200px;
+}
+
 mat-card.blankSummary {
+  display: inline-flex;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.1);
+
+  .buttonDiv {
+    margin: auto;
+    display: none;
+  }
 }
 
 mat-card.summary {

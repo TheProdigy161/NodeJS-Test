@@ -1,4 +1,5 @@
-<div cdkDropList cdkDropListOrientation="vertical" (cdkDropListDropped)="drop($event)">
-  <app-dashboard-summary *ngFor="let test of testArray" [dashboardSummaryTitle]="test" [addFunction]="addNewSummary"></app-dashboard-summary>
+<div cdkDropListGroup>
+  <div class="dropList" cdkDropList *ngFor="let tests of testArray; let i = index" [cdkDropListData]="testArray[i]" cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event, i)">
+    <app-dashboard-summary *ngFor="let test of tests; let j = index" [arrayIndex]="i" [index]="j" [dashboardSummaryTitle]="test" [addFunction]="addNewSummary"></app-dashboard-summary>
+  </div>
 </div>
-

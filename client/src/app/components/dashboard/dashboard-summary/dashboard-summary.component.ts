@@ -7,11 +7,15 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 })
 export class DashboardSummaryComponent implements OnInit {
   @Input()
-  addFunction: Function = null;
+  addFunction: any = null;
   @Input()
   allowEdit: boolean = false;
   @Input()
   dashboardSummaryTitle: string = null;
+  @Input()
+  arrayIndex: number = null;
+  @Input()
+  index: number = null;
 
   constructor() {
   }
@@ -20,7 +24,7 @@ export class DashboardSummaryComponent implements OnInit {
   }
 
   add(): void {
-    this.addFunction();
+    this.addFunction(this.arrayIndex, this.index);
   }
 
   showBlankCard(): boolean {

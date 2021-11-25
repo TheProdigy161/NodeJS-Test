@@ -8,13 +8,20 @@ a {
 }
 
 .container {
-  padding: 8px 0;
+  display: flex;
+  padding: 2.5px 0;
   text-align: center;
 }
 
 .subContainer {
   display: inline-block;
   vertical-align: middle;
+  margin-right: 16px;
+}
+
+.subContainerIcon {
+  display: inline-block;
+  margin: 0 5px;
 
   button {
     vertical-align: middle;

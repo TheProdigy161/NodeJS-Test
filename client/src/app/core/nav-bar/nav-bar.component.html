@@ -1,17 +1,17 @@
 <mat-toolbar color="primary" class="example-toolbar">
-  <button mat-icon-button (click)="sidenav.toggle()">
+  <button mat-icon-button (click)="toggleSidenav()">
     <mat-icon>menu</mat-icon>
   </button>
   <h1 class="pageTitle">{{ this.pageService.pageTitle$.asObservable() | async }}</h1>
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav mode="over" [fixedInViewport]="true" fixedTopGap="50" [class.fullSidenav]="!showOnlyIcon" [class.miniSidenav]="showOnlyIcon" #sidenav mode="side">
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav [@expandSidenav]="getStateName()" mode="push" [opened]="true" [fixedInViewport]="true" fixedTopGap="50" [class.fullSidenav]="!showOnlyIcon" [class.miniSidenav]="showOnlyIcon" mode="side">
     <div class="routingDiv">
       <app-page-link pageRoute="dashboard" pageName="Dashboard" icon="house" [iconOnly]="showOnlyIcon"></app-page-link>
       <app-page-link pageRoute="messages" pageName="Messages" icon="email" [iconOnly]="showOnlyIcon"></app-page-link>
     </div>
-    <div class="versionDiv" *ngIf="version$ | async as versionData">Version - {{ versionData.versionNumber }}</div>
+    <div class="versionDiv" *ngIf="version$ | async as versionData">v{{ versionData.versionNumber }}</div>
   </mat-sidenav>
 
   <mat-sidenav-content>

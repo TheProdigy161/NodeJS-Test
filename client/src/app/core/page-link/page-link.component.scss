@@ -2,21 +2,20 @@ a {
   display: inline-block;
   text-decoration: none;
   font-size: 25px;
-  height: 20px;
   color: black;
-  margin: 10px 0;
+  max-width: 120px;
+  margin-top: 10px;
+  height: 24px;
+  text-align: left;
+
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .container {
   display: flex;
   padding: 2.5px 0;
   text-align: center;
-}
-
-.subContainer {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 16px;
 }
 
 .subContainerIcon {
@@ -26,4 +25,10 @@ a {
   button {
     vertical-align: middle;
   }
+}
+
+.subContainer {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16px;
 }

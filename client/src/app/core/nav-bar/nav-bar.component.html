@@ -5,8 +5,8 @@
   <h1 class="pageTitle">{{ this.pageService.pageTitle$.asObservable() | async }}</h1>
 </mat-toolbar>
 
-<mat-sidenav-container autosize>
-  <mat-sidenav #sidenav [@expandSidenav]="getStateName()" mode="push" [opened]="true" [fixedInViewport]="true" fixedTopGap="50" [class.fullSidenav]="!showOnlyIcon" [class.miniSidenav]="showOnlyIcon" mode="side">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [@expandSidenav]="getStateName()" mode="side" [opened]="true" [fixedInViewport]="true" fixedTopGap="50" [class.fullSidenav]="!showOnlyIcon" [class.miniSidenav]="showOnlyIcon">
     <div class="routingDiv">
       <app-page-link pageRoute="dashboard" pageName="Dashboard" icon="house" [iconOnly]="showOnlyIcon"></app-page-link>
       <app-page-link pageRoute="messages" pageName="Messages" icon="email" [iconOnly]="showOnlyIcon"></app-page-link>
@@ -14,7 +14,7 @@
     <div class="versionDiv" *ngIf="version$ | async as versionData">v{{ versionData.versionNumber }}</div>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content [@shiftSidenavContent]="getStateName()">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

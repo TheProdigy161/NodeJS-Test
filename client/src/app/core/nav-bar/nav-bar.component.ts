@@ -11,14 +11,22 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./nav-bar.component.scss'],
   animations: [
     trigger('expandSidenav', [
-      state('normal', style({
-        // opacity: 1
+      state('mini', style({
+        width: '50px'
       })),
       state('expand', style({
-        // opacity: 0
+        width: '200px'
       })),
-      transition('show => hide', animate('600ms ease-out')),
-      transition('hide => show', animate('1000ms ease-in'))
+      transition('mini <=> expand', animate('100ms ease-in'))
+    ]),
+    trigger('shiftSidenavContent', [
+      state('mini', style({
+        "margin-left": '50px'
+      })),
+      state('expand', style({
+        "margin-left": '200px'
+      })),
+      transition('mini <=> expand', animate('100ms ease-in'))
     ])
   ]
 })
@@ -38,6 +46,6 @@ export class NavBarComponent implements OnInit {
   }
 
   getStateName(): string {
-    return this.showOnlyIcon ? 'normal' : 'expand'
+    return this.showOnlyIcon ? 'mini' : 'expand'
   }
 }

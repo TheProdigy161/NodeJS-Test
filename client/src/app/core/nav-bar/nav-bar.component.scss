@@ -1,12 +1,3 @@
-.fullSidenav {
-  min-width: 10vw;
-}
-
-.miniSidenav {
-  min-width: 50px;
-  width: 1vw;
-}
-
 .routingDiv {
   min-height: 97.5%;
 }
@@ -31,6 +22,7 @@ mat-toolbar {
   min-height: 50px;
   max-height: 50px;
   z-index: 1000;
+  padding: 0 5px;
 }
 
 mat-sidenav-content {

@@ -18,7 +18,7 @@ export class HttpService {
     this.controller = controller;
   }
 
-  public get<T>(action?: string, responseType?: string): Observable<T> {
+  public get<T>(action?: string): Observable<T> {
     return this.http.get<ApiResponse<T>>(`${this.apiUrl}/${this.controller}/${action ?? ''}`)
       .pipe(map(x => x.body)
     );

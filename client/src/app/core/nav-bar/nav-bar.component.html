@@ -6,10 +6,10 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav class="sidenav" #sidenav mode="side">
+  <mat-sidenav mode="over" [fixedInViewport]="true" fixedTopGap="50" [class.fullSidenav]="!showOnlyIcon" [class.miniSidenav]="showOnlyIcon" #sidenav mode="side">
     <div class="routingDiv">
-      <app-page-link pageRoute="dashboard" pageName="Dashboard"></app-page-link>
-      <app-page-link pageRoute="messages" pageName="Messages"></app-page-link>
+      <app-page-link pageRoute="dashboard" pageName="Dashboard" icon="house" [iconOnly]="showOnlyIcon"></app-page-link>
+      <app-page-link pageRoute="messages" pageName="Messages" icon="email" [iconOnly]="showOnlyIcon"></app-page-link>
     </div>
     <div class="versionDiv" *ngIf="version$ | async as versionData">Version - {{ versionData.versionNumber }}</div>
   </mat-sidenav>

@@ -5,6 +5,7 @@ import { IMessage } from './message.interface';
 export class Message implements IMessage {
     id: number = 0;
     title: string = '';
+    subtitle: string = '';
     content: string = '';
 
     auditInfo: IAuditInfo;
@@ -15,6 +16,8 @@ export class Message implements IMessage {
 
         this.id = data.id;
         this.title = data.title;
+        this.subtitle = data.subtitle;
+        this.content = data.content;
 
         this.auditInfo = new AuditInfo(data.auditInfo);
     }

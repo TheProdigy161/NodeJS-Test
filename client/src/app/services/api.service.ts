@@ -19,6 +19,6 @@ export class ApiService {
   }
 
   getVersion(): Observable<VersionData> {
-    return this.http.get('version', 'text');
+    return this.http.get('version');
   }
 }

@@ -1,5 +1,9 @@
-.sidenav {
+.fullSidenav {
   min-width: 10vw;
+}
+
+.miniSidenav {
+  min-width: 1vw;
 }
 
 .routingDiv {
@@ -17,15 +21,20 @@
 }
 
 mat-sidenav-container {
-  min-height: 95%;
+  height: 95%;
+  padding-bottom: 5%;
 }
 
 mat-toolbar {
-  min-height: 5%;
+  top: 0;
+  min-height: 50px;
+  max-height: 50px;
+  z-index: 1000;
 }
 
 mat-sidenav-content {
   padding: 2.5%;
+  height: 100%;
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row {

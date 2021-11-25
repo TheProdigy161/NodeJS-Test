@@ -11,11 +11,16 @@ import { Observable } from 'rxjs';
 })
 export class NavBarComponent implements OnInit {
   version$: Observable<VersionData> = new Observable();
+  showOnlyIcon: boolean = true;
 
   constructor(private api: ApiService, public pageService: PageService) {
   }
 
   ngOnInit(): void {
     this.version$ = this.api.getVersion();
+  }
+
+  toggleSidenav(): void {
+    this.showOnlyIcon = !this.showOnlyIcon;
   }
 }

@@ -10,6 +10,10 @@ export class PageLinkComponent implements OnInit {
   pageRoute: string = null;
   @Input()
   pageName: string = null;
+  @Input()
+  icon: string = null;
+  @Input()
+  iconOnly: boolean = false;
 
   constructor() { }
 

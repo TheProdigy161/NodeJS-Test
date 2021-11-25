@@ -1,3 +1,10 @@
-<div *ngIf="pageRoute" >
-  <a [routerLink]="pageRoute">{{pageName}}</a>
+<div class="container" *ngIf="pageRoute" >
+  <div *ngIf="icon" class="subContainer">
+    <button mat-icon-button [routerLink]="pageRoute">
+      <mat-icon>{{icon}}</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="!iconOnly"  class="subContainer">
+    <a [routerLink]="pageRoute">{{pageName}}</a>
+  </div>
 </div>

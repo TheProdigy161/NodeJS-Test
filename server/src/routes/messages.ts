@@ -9,18 +9,21 @@ export default function (app: Express): void {
             new Message({
                 id: 1,
                 title: 'First message',
+                subtitle: 'First message subtitle.',
                 content: 'This is my first message.',
                 auditInfo: null
             }),
             new Message({
                 id: 2,
                 title: 'Second message',
+                subtitle: 'Second message subtitle.',
                 content: 'This is my second message.',
                 auditInfo: null
             }),
             new Message({
                 id: 3,
                 title: 'Third message',
+                subtitle: 'Third message subtitle.',
                 content: 'This is my third message.',
                 auditInfo: null
             }),

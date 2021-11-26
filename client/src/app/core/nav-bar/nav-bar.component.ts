@@ -5,6 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
+const SIDENAV_WIDTH: number = 50;
+const SIDENAV_EXPANDED_WIDTH: number = 180;
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -12,19 +15,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('expandSidenav', [
       state('mini', style({
-        width: '50px'
+        width: `${SIDENAV_WIDTH}px`
       })),
       state('expand', style({
-        width: '200px'
+        width: `${SIDENAV_EXPANDED_WIDTH}px`
       })),
       transition('mini <=> expand', animate('100ms ease-in'))
     ]),
     trigger('shiftSidenavContent', [
       state('mini', style({
-        "margin-left": '50px'
+        "margin-left": `${SIDENAV_WIDTH}px`
       })),
       state('expand', style({
-        "margin-left": '200px'
+        "margin-left": `${SIDENAV_EXPANDED_WIDTH}px`
       })),
       transition('mini <=> expand', animate('100ms ease-in'))
     ])

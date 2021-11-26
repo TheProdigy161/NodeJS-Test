@@ -6,9 +6,10 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav [@expandSidenav]="getStateName()" mode="side" [opened]="true" [fixedInViewport]="true" fixedTopGap="50" [class.fullSidenav]="!showOnlyIcon" [class.miniSidenav]="showOnlyIcon">
+  <mat-sidenav #sidenav class="sidenav" [@expandSidenav]="getStateName()" mode="side" [opened]="true" [fixedInViewport]="true" fixedTopGap="50">
     <div class="routingDiv">
-      <app-page-link pageRoute="dashboard" pageName="Dashboard" icon="house" [iconOnly]="showOnlyIcon"></app-page-link>
+      <app-page-link pageRoute="home" pageName="Home" icon="home" [iconOnly]="showOnlyIcon"></app-page-link>
+      <app-page-link pageRoute="dashboard" pageName="Dashboard" icon="dashboard" [iconOnly]="showOnlyIcon"></app-page-link>
       <app-page-link pageRoute="messages" pageName="Messages" icon="email" [iconOnly]="showOnlyIcon"></app-page-link>
     </div>
     <div class="versionDiv" *ngIf="version$ | async as versionData">v{{ versionData.versionNumber }}</div>

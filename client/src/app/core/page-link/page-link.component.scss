@@ -1,11 +1,11 @@
 a {
   display: inline-block;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   max-width: 120px;
   margin-top: 10px;
-  height: 24px;
+  height: 20px;
   text-align: left;
 
   overflow: hidden;
@@ -16,6 +16,7 @@ a {
   display: flex;
   padding: 2.5px 0;
   text-align: center;
+  overflow: hidden;
 }
 
 .subContainerIcon {

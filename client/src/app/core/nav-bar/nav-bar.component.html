@@ -11,6 +11,7 @@
       <app-page-link pageRoute="home" pageName="Home" icon="home" [iconOnly]="showOnlyIcon"></app-page-link>
       <app-page-link pageRoute="dashboard" pageName="Dashboard" icon="dashboard" [iconOnly]="showOnlyIcon"></app-page-link>
       <app-page-link pageRoute="messages" pageName="Messages" icon="email" [iconOnly]="showOnlyIcon"></app-page-link>
+      <app-page-link pageRoute="charts" pageName="Charts" icon="bar_chart" [iconOnly]="showOnlyIcon"></app-page-link>
     </div>
     <div class="versionDiv" *ngIf="version$ | async as versionData">v{{ versionData.versionNumber }}</div>
   </mat-sidenav>

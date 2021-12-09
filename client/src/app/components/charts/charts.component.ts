@@ -6,6 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./charts.component.scss']
 })
 export class ChartsComponent implements OnInit {
+  results: any[] = [
+    {
+      "name": "Test",
+      "value": 123456
+    },
+    {
+      "name": "Test2",
+      "value": 2329
+    },
+    {
+      "name": "Test3",
+      "value": 32239
+    }
+  ];
 
   constructor() { }
 

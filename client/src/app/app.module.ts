@@ -17,8 +17,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardSummaryComponent } from './components/dashboard/dashboard-summary/dashboard-summary.component';
 import { ChartsComponent } from './components/charts/charts.component';
 import { PieGridChartComponent } from './components/charts/pie-grid-chart/pie-grid-chart.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PieAdvancedChartComponent } from './components/charts/pie-advanced-chart/pie-advanced-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 export function initializeApp(appConfig: SettingsProvider) {
   return () => appConfig.load();
@@ -35,12 +35,12 @@ export function initializeApp(appConfig: SettingsProvider) {
     DashboardSummaryComponent,
     ChartsComponent,
     PieGridChartComponent,
-    PieAdvancedChartComponent
+    PieAdvancedChartComponent,
   ],
   imports: [
+    NgxChartsModule,
     MaterialUiModule,
     BrowserModule,
-    NgxChartsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

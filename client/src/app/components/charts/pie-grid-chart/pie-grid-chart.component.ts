@@ -21,8 +21,6 @@ export class PieGridChartComponent implements OnInit {
     },
   ];
 
-  view: any[] = [700, 400];
-
   constructor() { }
 
   ngOnInit(): void {
